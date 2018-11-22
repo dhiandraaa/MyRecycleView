@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.adith.dicoding.myrecycleview.Presiden;
 import com.adith.dicoding.myrecycleview.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -43,8 +44,7 @@ public class ListPresidenAdapter extends RecyclerView.Adapter<ListPresidenAdapte
 
         Glide.with(konteks)
                 .load(getListPresiden().get(position).getPhoto())
-                .override(55,55)
-                .crossFade()
+                .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
     }
 
